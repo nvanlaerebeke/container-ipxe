@@ -40,7 +40,7 @@ spec:
       steps {
         container(name: 'kaniko-warmer', shell: '/busybox/sh') {
           sh '''#!/busybox/sh 
-/kaniko/warmer --cache-dir=/cache --image=http:latest
+/kaniko/warmer --cache-dir=/cache --image=httpd:latest
           '''
         }        
         container(name: 'kaniko', shell: '/busybox/sh') {
