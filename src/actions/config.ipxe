@@ -1,0 +1,4 @@
+#!ipxe
+
+config
+chain --replace --autofree ${menu} ||

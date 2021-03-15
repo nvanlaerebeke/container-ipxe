@@ -1,0 +1,12 @@
+#!ipxe
+#
+# this starts the Ubunto 20.04 (Focal) installation with the given preseed file
+#
+
+echo Starting ${cname}Ubunto 20.04 (Focal)${reset} (${archb}) server installation
+sleep 3
+
+set imgargs ip=dhcp auto url=${seed-ub20.04-server} locale=en_US hostname=ubuntu keymap=us quiet
+kernel ${pxe}ubuntu20.04/vmlinuz ${imgargs}
+initrd ${pxe}ubuntu20.04/initrd.gz
+boot

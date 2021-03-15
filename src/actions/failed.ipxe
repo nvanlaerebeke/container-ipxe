@@ -1,0 +1,4 @@
+#!ipxe
+
+echo Booting failed, dropping to shell
+chain --replace --autofree ${shell} ||

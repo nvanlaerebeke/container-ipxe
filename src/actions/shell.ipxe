@@ -1,0 +1,8 @@
+#!ipxe
+
+echo Type 'exit' to get the back to the menu
+
+shell
+set menu-timeout 0
+set submenu-timeout 0
+chain --replace --autofree ${menu} ||

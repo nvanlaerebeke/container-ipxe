@@ -1,0 +1,14 @@
+#!ipxe
+#
+# this starts the Ubunto 20.04 (Focal) NFS installation
+#
+
+echo Starting ${cname}Ubunto 20.04 (Focal) ${reset} (${archb}) from NFS
+sleep 3
+
+set imgargs net.ifnames=0 dwc_otg.lpm_enable=0 console=serial0,115200 console=tty1 root=/dev/nfs nfsroot=192.168.5.50:/volume1/NetOS/ ip=dhcp elevator=deadline rootwait fixrtc rw
+kernel ${pxe}ubuntu20.04/netos/vmlinuz-5.8.0-36-generic ${imgargs}
+initrd ${pxe}ubuntu20.04/netos/initrd.img-5.8.0-36-generic
+boot
+
+

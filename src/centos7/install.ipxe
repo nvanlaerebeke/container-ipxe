@@ -1,0 +1,17 @@
+#!ipxe
+#
+# this starts the centos 7 installation with the given kickstart file
+#
+
+echo Starting ${cname}CENTOS 7${reset} (${archb}) installation
+
+sleep 1
+echo .
+sleep 1
+echo .
+sleep 1
+echo .
+
+initrd ${pxe}centos7/initrd.img
+boot ${pxe}centos7/vmlinuz repo=${repo-el7} ks=${ks-el7}
+chain --replace --autofree ${menu} ||
